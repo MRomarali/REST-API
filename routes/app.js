@@ -4,8 +4,8 @@ const fetch = require('node-fetch');
 const qoutes = require('find-quote');
 
 router.get('/quotes/:quote', (req,res) => {
-    let quoteFound = qoutes.getQuote(req.params.quote);
-    let isFound = quoteFound === "" ? 'No quotes were found with the word ' + req.params.quote : quoteFound
+    let theQuote = qoutes.getQuote(req.params.quote);
+    let isFound = theQuote === "" ? 'Not found ' + req.params.quote : theQuote
     
     res.send(
       isFound
